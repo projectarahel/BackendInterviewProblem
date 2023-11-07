@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using DynamicExpressions;
+using System.Net;
+using BackendInterviewProblem.Models;
 
 [ApiController]
 [Route("[controller]")]
@@ -25,9 +28,46 @@ public class ProductsController : Controller
 
 
     [HttpGet]
-    public IActionResult GetProducts(string name, string category, int? minPrice, int? maxPrice, string sortOrder, int? pageNumber, int? pageSize)
+    [ProducesResponseType(typeof(Pagination<Product>), (int)HttpStatusCode.OK)]
+    public IActionResult GetProducts(
+        string name,
+        string category,
+        int? minPrice,
+        int? maxPrice,
+        string sortOrder,
+        int? pageNumber, 
+        int? pageSize)
     {
-        // Your implementation here
-        return Ok();
+        var filter = new DynamicFilterBuilder<Product>()
+            .And(nameof(Product.Name), FilterOperator.ContainsIgnoreCase, name)
+            .And(nameof(Product.Category), FilterOperator.ContainsIgnoreCase, category)
+            .And(nameof(Product.Price), FilterOperator.GreaterThanOrEqual, minPrice ?? 0)
+            .And(nameof(Product.Price), FilterOperator.LessThanOrEqual, maxPrice ?? 0)
+            .Build();
+
+        var sort = DynamicExpressions.DynamicExpressions.GetPropertyGetter<Product>(nameof(Product.Price));
+
+        var productsQuery = Products
+            .AsQueryable()
+            .Where(filter);
+
+        if (sortOrder.ToLower() == "asc")
+        {
+            productsQuery = productsQuery.OrderBy(sort);
+        }
+        else
+        {
+            productsQuery = productsQuery.OrderByDescending(sort);
+        }
+
+        var paginatedResult = new Pagination<Product>
+        {
+            CurrentPage = pageNumber ?? 1, // assuming that default pageNumber is 1,
+            TotalNumberOfPages = Products.Count() / (pageSize ?? 10), // assuming that default pageSize is 10
+            TotalNumberOfItems = Products.Count(),
+            Data = productsQuery.ToList()
+        };
+
+        return Ok(paginatedResult);
     }
 }

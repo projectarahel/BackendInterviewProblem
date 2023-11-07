@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aberf\\Desktop\\BackendInterviewProblem\\BackendInterviewProblem.csproj": {}
+    "C:\\dev\\backendinterviewproblem\\BackendInterviewProblem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aberf\\Desktop\\BackendInterviewProblem\\BackendInterviewProblem.csproj": {
+    "C:\\dev\\backendinterviewproblem\\BackendInterviewProblem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aberf\\Desktop\\BackendInterviewProblem\\BackendInterviewProblem.csproj",
+        "projectUniqueName": "C:\\dev\\backendinterviewproblem\\BackendInterviewProblem.csproj",
         "projectName": "BackendInterviewProblem",
-        "projectPath": "C:\\Users\\aberf\\Desktop\\BackendInterviewProblem\\BackendInterviewProblem.csproj",
-        "packagesPath": "C:\\Users\\aberf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aberf\\Desktop\\BackendInterviewProblem\\obj\\",
+        "projectPath": "C:\\dev\\backendinterviewproblem\\BackendInterviewProblem.csproj",
+        "packagesPath": "C:\\Users\\anulud.MID_OCEAN\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\backendinterviewproblem\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\aberf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\anulud.MID_OCEAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,9 +22,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/fli2iEvX4vZglcPUs8mqaLbrcFcOFyoCTLGXDD772WHpQFuSjx/api": {},
+          "https://nuget.pkg.github.com/doehle/index.json": {}
         },
         "frameworks": {
           "net7.0": {
@@ -46,6 +42,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "DynamicExpressions.NET": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.9, )"
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,11 +8,20 @@
     ".NETCoreApp,Version=v7.0": {
       "BackendInterviewProblem/1.0.0": {
         "dependencies": {
+          "DynamicExpressions.NET": "1.1.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.9",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
           "BackendInterviewProblem.dll": {}
+        }
+      },
+      "DynamicExpressions.NET/1.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/DynamicExpressions.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
         }
       },
       "Microsoft.AspNetCore.OpenApi/7.0.9": {
@@ -80,6 +89,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DynamicExpressions.NET/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TLUCymLWsPvlR4rzJzW+qwTt50tZt2s9kMYZLE1+4RkuJVBExAIutkTAy0ebNdlbgzQUYEqVXRv0b6209HF9oA==",
+      "path": "dynamicexpressions.net/1.1.0",
+      "hashPath": "dynamicexpressions.net.1.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/7.0.9": {
       "type": "package",
